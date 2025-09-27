@@ -284,21 +284,18 @@ def youtube_channel():
 
     # render embedded list
     tpl = """
-    <!doctype html>
-    <html><head><title>YouTube Channel</title>
-    <style>body{{background:#111;color:#ff9900;font-family:Arial;text-align:center}} .video{{margin:20px;}}</style>
-    </head><body>
-    <h1>YouTube Channel Videos</h1>
-    {% for v in videos %}
-      <div class="video">
-        <h3>{{ v.title }}</h3>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/{{ v.id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    {% endfor %}
-    <a href="/" style="color:#ccc">← Back</a>
-    {{ floating|safe }}
-    </body></html>
-    """
+<h1>YouTube Channel</h1>
+<ul>
+{% for video in videos %}
+  <li>
+    <a href="https://www.youtube.com/watch?v={{ video['id']['videoId'] }}">
+      {{ video['snippet']['title'] }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+"""
+
     return render_template_string(tpl, videos=videos, floating=FLOATING_ICONS)
 
 # ----------------- ORIGINAL VIDEOS PAGE (local files) -----------------
