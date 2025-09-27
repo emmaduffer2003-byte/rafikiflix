@@ -72,6 +72,8 @@ FOLDER_ID = os.getenv("DRIVE_FOLDER_ID", "13TQeux9PEwkyOZqtZ2qRMJwn4zbL6PsI")
 # ----------------- YOUTUBE CONFIG -----------------
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")      # set this on Render env
 YOUTUBE_CHANNEL_ID = os.getenv("YOUTUBE_CHANNEL_ID")  # set this on Render env
+print("DEBUG YouTube API KEY:", YOUTUBE_API_KEY)
+print("DEBUG YouTube Channel ID:", YOUTUBE_CHANNEL_ID)
 
 # ----------------- VIEW COUNTER -----------------
 VIEWS_FILE = "views.json"
