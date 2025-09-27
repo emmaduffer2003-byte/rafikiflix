@@ -2,3 +2,4 @@
 /videos
 __pycache__/
 *.pyc
+service_account.json
